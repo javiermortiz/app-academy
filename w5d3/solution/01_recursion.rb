@@ -70,10 +70,10 @@ def fibs_rec(n)
 end
 
 class Array
-  def subsets
+  def subsets  
     return [[]] if empty?
-    subs = take(count - 1).subsets
-    subs.concat(subs.map { |sub| sub + [last] })
+    subs = self.take(self.count - 1).subsets
+    subs.concat(subs.map { |sub| sub + [self.last] })
   end
 end
 
