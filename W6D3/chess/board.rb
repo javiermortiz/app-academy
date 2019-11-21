@@ -5,11 +5,13 @@ require_relative "rook"
 require_relative "queen"
 require_relative "knight"
 require_relative "king"
+require_relative "pawn"
+require_relative "null_piece"
 
 class Board
     attr_reader :rows
     def initialize
-        @rows = Array.new(8) { Array.new(8,nil)}
+        @rows = Array.new(8) { Array.new(8, NullPiece.instance) }
     end 
 
     def pieces 
