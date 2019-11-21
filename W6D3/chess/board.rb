@@ -5,7 +5,7 @@ class Board
         @chessboard = Array.new(8) { Array.new(8,nil)}
         initial_rows_with_pieces= [0, 1, 6, 7]
         initial_rows_with_pieces.each do |row|
-            @chessboard[row] = Array.new(8) { Piece.new }
+            @chessboard[row] = Array.new(8) { Piece.new}
         end 
     end 
 
