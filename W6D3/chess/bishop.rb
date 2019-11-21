@@ -4,9 +4,10 @@ require_relative "slideable.rb"
 
 class Bishop < Piece
     include Slideable
-
-    def initialize(color, pos)
-        super(color, pos)
+    attr_reader :color 
+    
+    def initialize(color, board, pos)
+        super(color, board, pos)
     end 
 
     def move_dirs
@@ -14,5 +15,5 @@ class Bishop < Piece
     end 
 end
 
-my_bishop = Bishop.new(:black, [0,2])
-p my_bishop.moves([0,2])
+# my_bishop = Bishop.new(:black, [0,2])
+# p my_bishop.moves([0,2])
