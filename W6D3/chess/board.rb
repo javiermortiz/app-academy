@@ -1,6 +1,10 @@
 require_relative "piece.rb"
 require_relative "bishop.rb"
 require_relative "slideable.rb"
+require_relative "rook"
+require_relative "queen"
+require_relative "knight"
+require_relative "king"
 
 class Board
     attr_reader :rows

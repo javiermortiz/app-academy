@@ -1,0 +1,13 @@
+my_board = Board.new 
+my_board[[0,0]] = Rook.new(:black, my_board, [0,0])
+my_board[[0,1]] = Knight.new(:black, my_board, [0,1])
+my_board[[0,2]] = Bishop.new(:black, my_board, [0,2])
+my_board[[0,3]] = Queen.new(:black, my_board, [0,3])
+my_board[[0,4]] = King.new(:black, my_board, [0,4])
+my_board[[2,0]] = Rook.new(:white, my_board, [2,0])
+my_board[[2,2]] = Queen.new(:white, my_board, [2,2])
+black_rook = my_board[[0,0]]
+black_knight = my_board[[0,1]]
+black_bishop = my_board[[0,2]]
+black_queen = my_board[[0,3]]
+black_king = my_board[[0,4]]
