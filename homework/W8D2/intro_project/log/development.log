@@ -29,3 +29,12 @@ Migrating to CreateHouse (20191203035214)
   [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2430598305316995135)[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHouse Create (8.6ms)[0m  [1m[32mINSERT INTO "houses" ("address") VALUES ($1) RETURNING "id"[0m  [["address", "308 Negra Arroyo Lane"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPerson Create (3.3ms)[0m  [1m[32mINSERT INTO "people" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Walter White"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPerson Update (8.5ms)[0m  [1m[33mUPDATE "people" SET "house_id" = $1 WHERE "people"."id" = $2[0m  [["house_id", 1], ["id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m

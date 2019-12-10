@@ -106,6 +106,7 @@ describe 'Associatable' do
   describe '#belongs_to' do
     let(:breakfast) { Cat.find(1) }
     let(:devon) { Human.find(1) }
+    let(:stray_cat) { Cat.find(5) }
 
     it 'fetches `human` from `Cat` correctly' do
       expect(breakfast).to respond_to(:human)
@@ -123,8 +124,16 @@ describe 'Associatable' do
       expect(house.address).to eq('26th and Guerrero')
     end
 
+  end
+
+  describe '#belongs_to' do
+    let(:breakfast) { Cat.find(1) }
+    let(:devon) { Human.find(1) }
+    let(:stray_cat) { Cat.find(5) }
+    
     it 'returns nil if no associated object' do
-      stray_cat = Cat.find(5)
+      # stray_cat = Cat.find(5)
+      expect(stray_cat).to respond_to(:human)
       expect(stray_cat.human).to eq(nil)
     end
   end

@@ -9,18 +9,56 @@ require_relative "pawn"
 require_relative "null_piece"
 
 class Board
-    attr_reader :rows
+    attr_reader :rows, :board
     def initialize
         @rows = Array.new(8) { Array.new(8, NullPiece.instance) }
     end 
 
-    def pieces 
-        # board = Board.new 
-        # initial_rows_with_pieces = [0, 1, 6, 7]
-        # initial_rows_with_pieces.each do |row|
-        #     @rows[row] = Array.new(8) { Bishop.new(:black, board, ) }
-        # end 
-        # self[[0,0]] = Bishop.new(:black, board, [0,0])
+    def self.pieces 
+        board = Board.new 
+        subclasses = [Rook, Knight, Bishop, Queen, 
+        King, Bishop, Knight, Rook]
+        subclasses.each_with_index do |subclass, idx|
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+            board[[0,idx]] = subclass.new(:black, board, [0,idx])
+        end 
+        (0..7).each do |idx|
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+            board[[1,idx]] = Pawn.new(:black, board, [0,idx])
+        end 
+        subclasses.each_with_index do |subclass, idx|
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+            board[[7,idx]] = subclass.new(:white, board, [7,idx])
+        end 
+        (0..7).each do |idx|
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+            board[[6,idx]] = Pawn.new(:white, board, [6,idx])
+        end 
+        board 
     end 
 
     def [](pos)
@@ -36,13 +74,13 @@ class Board
     def move_piece(start_pos, end_pos)
       
         piece = self[start_pos]
-        if !piece 
+        if piece.nil?
             raise StandardError.new("No piece at start position")
-        elsif self[end_pos] != nil 
+        elsif !valid_pos?(end_pos)
             raise StandardError.new("Not a valid end position")
         end 
         self[end_pos] = piece  
-        self[start_pos] = nil 
+        self[start_pos] = NullPiece.instance 
     end 
 
     def valid_pos?(pos)

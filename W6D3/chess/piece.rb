@@ -9,4 +9,8 @@ class Piece
     def inspect
         @color.to_s + " " + self.class.to_s
     end 
+
+    def valid_moves
+        
+    end 
 end 
