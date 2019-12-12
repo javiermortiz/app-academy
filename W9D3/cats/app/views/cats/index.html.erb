@@ -1,0 +1,9 @@
+<h1>Cat</h1>
+
+<ul>
+  <% Cat.all.each do | cat | %>
+    <li><a href="<%= cat_url(cat.id) %>"><%= cat.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="<%= new_cat_url %>">Create New Cat</a>

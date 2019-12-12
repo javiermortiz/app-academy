@@ -1,0 +1,69 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+  <thead>
+    <tr><th colspan="2">Cat Attributes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Birthdate</td>
+      <td><%= @cat.birth_date %></td>
+    </tr>
+
+    <tr>
+      <td>Color</td>
+      <td><%= @cat.color %></td>
+    </tr>
+
+    <tr>
+      <td>Name</td>
+      <td><%= @cat.name %></td>
+    </tr>
+
+    <tr>
+      <td>Sex</td>
+      <td><%= @cat.sex %></td>
+    </tr>
+
+    <tr>
+      <td>Description</td>
+      <td><%= @cat.description %></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr><th colspan="2">Rental Requests</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Start Date</td>
+      <td>End Date</td>
+    </tr>
+    <% @cat.cat_rentals.order('start_date DESC').each do |rental| %>
+      <% if rental.approved? || rental.pending? %>
+        <tr>
+          <td><%= rental.start_date %></td>
+          <td><%= rental.end_date %></td>
+          <td><%= rental.status%></td>
+        </tr>
+      <%end%>
+    <% end %>
+  </tbody>
+</table>
+
+<% @cat.cat_rentals.order('start_date DESC').each do |rental| %>
+  <% if rental.pending? %>
+    <form action="<%= approve_cat_rental_url(rental.id) %>" method="POST"> 
+      <input type="submit" value="Approve">
+    </form>
+    <form action="<%= deny_cat_rental_url(rental.id) %>" method="POST">
+      <input type="submit" value="Deny">
+    </form>
+  <%end%>
+<% end %>
+
+<a href="<%= new_cat_rental_url %>">New Rental Request</a>
+<a href="<%= edit_cat_url %>">Edit cat</a>
+<a href="<%= cats_url %>">Return to index</a>
