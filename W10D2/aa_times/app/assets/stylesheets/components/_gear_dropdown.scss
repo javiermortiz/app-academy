@@ -27,15 +27,19 @@
 
 .editions li,
 .help li {
-    margin: 18px 0;
+    margin: 10px 0;
 }
 
 .gear-dropdown li:last-of-type {
     margin-top: 10px;
 }
 
-.editions a:hover {
+.editions a {
     display: block;
+    padding: 5px 0;
+}
+
+.editions a:hover {
     background-color: $light-gray
 }
 
