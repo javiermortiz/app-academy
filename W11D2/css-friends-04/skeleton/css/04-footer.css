@@ -1,0 +1,12 @@
+/* PHASE 4: Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+  margin: auto;
+}
+
+.footer-nav ul{
+  display: flex;
+  
+}
