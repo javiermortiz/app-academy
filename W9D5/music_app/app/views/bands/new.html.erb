@@ -1,0 +1,9 @@
+<h1>Register a band</h1>
+
+<form action="<%= bands_url %>" method="POST">
+    <%= form_auth %>
+    <label for="band-name">Name</label>
+    <input type="text" id="band-name" name="band[name]"/>
+
+    <input type="submit" value="Submit"/>
+</form>
