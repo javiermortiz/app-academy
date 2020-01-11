@@ -98,6 +98,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _war
 
 /***/ }),
 
+/***/ "./src/drop_down.js":
+/*!**************************!*\
+  !*** ./src/drop_down.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\nconst dogs = {\n  \"Corgi\": \"https://www.akc.org/dog-breeds/cardigan-welsh-corgi/\",\n  \"Australian Shepherd\": \"https://www.akc.org/dog-breeds/australian-shepherd/\",\n  \"Affenpinscher\": \"https://www.akc.org/dog-breeds/affenpinscher/\",\n  \"American Staffordshire Terrier\": \"https://www.akc.org/dog-breeds/american-staffordshire-terrier/\",\n  \"Tosa\": \"https://www.akc.org/dog-breeds/tosa/\",\n  \"Labrador Retriever\": \"https://www.akc.org/dog-breeds/labrador-retriever/\",\n  \"French Bulldog\": \"https://www.akc.org/dog-breeds/french-bulldog/\" \n};\n\nfunction dogLinkCreator (dogs) {\n  const lis = [];\n  const dogNames = Object.keys(dogs);\n  dogNames.forEach(dog => {\n    const aTag = document.createElement(\"a\");\n    aTag.innerHTML = dog;\n    aTag.setAttribute(\"href\", dogs[dog]);\n    const liTag = document.createElement(\"li\");\n    liTag.classList.add(\"dog-link\");\n    liTag.classList.add(\"hide-dog-link\");\n    liTag.appendChild(aTag);\n    lis.push(liTag);\n  })\n  return lis;\n};\n\nfunction attachDogLinks () {\n  const dogLinks = dogLinkCreator(dogs);\n  const ulTag = document.querySelectorAll(\".drop-down-dog-list\")[0];\n  dogLinks.forEach(link => {\n    ulTag.appendChild(link);\n  })\n};\n\nfunction handleEnter () {\n  const dogLinks = document.querySelectorAll(\".dog-link\");\n  dogLinks.forEach(link => link.classList.remove(\"hide-dog-link\"));\n};\n\nfunction handleLeave () {\n  const dogLinks = document.querySelectorAll(\".dog-link\");\n  dogLinks.forEach(link => link.classList.add(\"hide-dog-link\"));\n};\n\nconst nav = document.querySelectorAll(\".drop-down-dog-nav\")[0];\nnav.addEventListener(\"mouseenter\", handleEnter);\nnav.addEventListener(\"mouseleave\", handleLeave);\nattachDogLinks();\n\n//# sourceURL=webpack:///./src/drop_down.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -106,7 +117,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _war
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _warmup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./warmup */ \"./src/warmup.js\");\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clock */ \"./src/clock.js\");\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _warmup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./warmup */ \"./src/warmup.js\");\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clock */ \"./src/clock.js\");\n/* harmony import */ var _drop_down_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./drop_down.js */ \"./src/drop_down.js\");\n/* harmony import */ var _drop_down_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_drop_down_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _todo_list_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todo_list.js */ \"./src/todo_list.js\");\n/* harmony import */ var _todo_list_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_todo_list_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/todo_list.js":
+/*!**************************!*\
+  !*** ./src/todo_list.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const todos = JSON.parse(localStorage.getItem(\"todos\")) || [];\nconst todoUl = document.querySelectorAll(\".todos\")[0];\nconst todoForm = document.querySelectorAll(\".add-todo-form\")[0];\n\nfunction addTodo (e) {\n    e.preventDefault();\n    const input = document.getElementsByName(\"add-todo\")[0];\n    const inputVal = input.value;\n    const newTodo = {\n        inputVal,\n        done: false\n    }\n    todos.push(newTodo);\n    localStorage.setItem(\"todos\", JSON.stringify(todos));\n    input.value = \"\";\n    populateList(todos);\n};\n\nfunction populateList (todos) {\n    const todoList = todos.map((item, i) => {\n        return `\n            <li>\n                <label for=\"my-box\">${item.inputVal}</label>\n                 <input id=\"my-box\" type=\"checkbox\" ${item.done ? \"checked\" : \"\"} data-index=${i}>\n            </li>\n        `\n    })\n    // todoList.forEach(el => todoUl.innerHTML = el);\n    todoUl.innerHTML = todoList.join(\"\");\n};\n\nfunction done (e) {\n    const li = e.target;\n    const i = li.dataset.index\n    todos[i].done = !todos[i].done; \n    localStorage.setItem(\"todos\", JSON.stringify(todos));\n    populateList(todos)\n};\n\ntodoForm.addEventListener(\"submit\", addTodo);\ntodoUl.addEventListener(\"click\", done);\npopulateList(todos);\n\n\n//# sourceURL=webpack:///./src/todo_list.js?");
 
 /***/ }),
 
