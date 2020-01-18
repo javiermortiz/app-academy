@@ -1,0 +1,93 @@
+
+{
+  "pokemon": {
+    "id": 5,
+    "name": "Rhydon",
+    "attack": 130,
+    "defense": 120,
+    "moves": [
+      "horn attack",
+      // ...
+    ],
+    "poke_type": "ground",
+    "image_url": "/assets/pokemon_snaps/112-054fbbe24b26953dc0a44be531802d9a5351e19386c5aad125e36e1d3006fd66.svg",
+    "item_ids": [
+      642,
+      // ...
+    ]
+  },
+  "items": {
+    "640": {
+      "id": 640,
+      "name": "Small Concrete Wallet",
+      "pokemon_id": 214,
+      "price": 71,
+      "happiness": 20,
+      "image_url": "/assets/pokemon_potion.svg"
+    },
+    // ...
+  }
+}
+
+{
+"pokemon": {
+"id": 5,
+"name": "Charmeleon",
+"attack": 64,
+"defense": 58,
+"poke_type": "fire",
+"moves": [
+"scratch",
+"ember",
+"metal claw",
+"flamethrower"
+],
+"image_url": "5.svg",
+"created_at": "2020-01-17T21:16:47.600Z",
+"updated_at": "2020-01-17T21:16:47.600Z"
+},
+"items": [
+{
+"13": {
+"item": {
+"id": 13,
+"pokemon_id": 5,
+"name": "Gorgeous Aluminum Keyboard",
+"price": 12,
+"happiness": 88,
+"image_url": "/assets/pokemon_super_potion.svg",
+"created_at": "2020-01-17T21:16:49.591Z",
+"updated_at": "2020-01-17T21:16:49.591Z"
+}
+}
+},
+{
+"14": {
+"item": {
+"id": 14,
+"pokemon_id": 5,
+"name": "Aerodynamic Silk Plate",
+"price": 83,
+"happiness": 40,
+"image_url": "/assets/pokemon_egg.svg",
+"created_at": "2020-01-17T21:16:49.593Z",
+"updated_at": "2020-01-17T21:16:49.593Z"
+}
+}
+},
+{
+"15": {
+"item": {
+"id": 15,
+"pokemon_id": 5,
+"name": "Small Wool Bottle",
+"price": 55,
+"happiness": 29,
+"image_url": "/assets/pokemon_potion.svg",
+"created_at": "2020-01-17T21:16:49.595Z",
+"updated_at": "2020-01-17T21:16:49.595Z"
+}
+}
+}
+]
+}
