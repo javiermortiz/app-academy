@@ -1,0 +1,21 @@
+.itemslist {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 8px;
+  margin-top: 15px;
+  background-image: radial-gradient(circle at 100% 150%, #f6f6f6 24%, #fff 25%, #fff 28%, #f6f6f6 29%, #f6f6f6 36%, #fff 36%, #fff 40%, transparent 40%, transparent),radial-gradient(circle at 0 150%, #f6f6f6 24%, #fff 25%, #fff 28%, #f6f6f6 29%, #f6f6f6 36%, #fff 36%, #fff 40%, transparent 40%, transparent),radial-gradient(circle at 50% 100%, #fff 10%, #f6f6f6 11%, #f6f6f6 23%, #fff 24%, #fff 30%, #f6f6f6 31%, #f6f6f6 43%, #fff 44%, #fff 50%, #f6f6f6 51%, #f6f6f6 63%, #fff 64%, #fff 71%, transparent 71%, transparent),radial-gradient(circle at 100% 50%, #fff 5%, #f6f6f6 6%, #f6f6f6 15%, #fff 16%, #fff 20%, #f6f6f6 21%, #f6f6f6 30%, #fff 31%, #fff 35%, #f6f6f6 36%, #f6f6f6 45%, #fff 46%, #fff 49%, transparent 50%, transparent),radial-gradient(circle at 0 50%, #fff 5%, #f6f6f6 6%, #f6f6f6 15%, #fff 16%, #fff 20%, #f6f6f6 21%, #f6f6f6 30%, #fff 31%, #fff 35%, #f6f6f6 36%, #f6f6f6 45%, #fff 46%, #fff 49%, transparent 50%, transparent);
+}
+
+.itempics img {
+  width: 90%;
+  height: 90%;
+}
+
+.itempics ul {
+  display: flex;
+  vertical-align: baseline;
+  text-align: center;
+  background-color: #f6f6f6;
+}

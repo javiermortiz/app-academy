@@ -1,0 +1,41 @@
+.detail {
+  border: 7px solid black;
+  border-radius: 8px;
+  width: calc(100% - 500px);
+  height: 100%;
+  float: right;
+  z-index: -1;
+  text-align: center;
+  overflow-y: scroll;
+  margin: 0 40px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.detail > img {
+  width: 60%;
+  height: 100%;
+  min-height: 50%;
+  object-fit: contain;
+  background: red;
+  background: -webkit-linear-gradient(315deg, #d43316, #ff0);
+  background: -o-linear-gradient(315deg, #d43316, #ff0);
+  background: -moz-linear-gradient(315deg, #d43316, #ff0);
+  background: linear-gradient(315deg, #d43316, #ff0);
+  margin-top: 10px;
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+.detail > ul {
+  color: black;
+  list-style: none;
+  font-size: 20px;
+}
+
+.detail li {
+  margin-top: 15px;
+}
+
