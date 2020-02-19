@@ -1,0 +1,17 @@
+docker container run --name nginx -d -p 80:80 nginx 
+
+docker container run --name httpd -d -p 81:80 httpd
+
+docker container run --name mysql -d -p 3306:3306 -e 042316 mysql
+
+ docker container run -d --net my_first_network --net-alias first elasticsearch:2
+
+ docker container run --net my_first_network alpine nslookup first 
+
+ docker container run --name curler --net my_first_network centos curl -s first:9200
+
+docker run -d --name nginx\
+ --mount type=bind, source=/Users/desktop/app-academy/W15D2/container_fun/rad, target=/rad \
+ nginx
+
+ docker container run -d --name postgres1 -v psql-data:/var/lib/postgresql/data postgres:9.6.1
