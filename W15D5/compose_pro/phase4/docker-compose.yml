@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  drupal:
+    build: 
+        context: .
+        dockerfile: Dockerfile
+    image: 042316/custom-drupal
+    ports: 
+        - 8080:80
+  db:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=plswork
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
+
+volumes: 
+    drupal-data:
