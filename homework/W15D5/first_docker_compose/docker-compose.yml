@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+    nginx:
+      build:
+        context: .
+      image: 042316/custom-nginx
+      ports:
+          - 80:80
