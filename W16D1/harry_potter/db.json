@@ -3,8 +3,8 @@
     {
       "id": 1,
       "name": "Harry Potter",
-      "houseId": 1,
-      "patronusId": 3
+      "houseId": 2,
+      "patronusId": 2
     },
     {
       "id": 2,
@@ -53,12 +53,6 @@
       "name": "Minerva McGonagall",
       "houseId": 1,
       "patronusId": 5
-    },
-    {
-      "id": 10,
-      "name": "Neville Longbottom",
-      "houseId": 1,
-      "patronusId": 9
     },
     {
       "id": 11,
@@ -113,6 +107,12 @@
       "houseId": 2,
       "patronusId": 9,
       "id": 19
+    },
+    {
+      "name": "Max Lin",
+      "houseId": 1,
+      "patronusId": 5,
+      "id": 20
     }
   ],
   "houses": [
@@ -235,13 +235,6 @@
       "wizardId": 11,
       "wood": "Hazel",
       "length": "9.5 in.",
-      "core": "Unicorn hair"
-    },
-    {
-      "id": 14,
-      "wizardId": 10,
-      "wood": "Cherry",
-      "length": "Unknown",
       "core": "Unicorn hair"
     },
     {
