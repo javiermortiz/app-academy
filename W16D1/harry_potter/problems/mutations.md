@@ -65,3 +65,8 @@ mutation {
     }
 }
 4. Delete two wizards (just make sure you are deleting wizards who exist! You can query the wizards root type for a list of all wizards.)
+mutation {
+    deleteWizard(id: 22) {
+        id
+    }
+}
